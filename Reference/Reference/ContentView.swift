@@ -10,7 +10,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    var chars: Character
+    var ppl: People
     var body: some View {
         VStack {
             Text("TLA Characters")
@@ -18,7 +18,7 @@ struct ContentView: View {
                 .fontWeight(.semibold)
                 .foregroundColor(Color(red: 0.23, green: 0.23, blue: 0.23, opacity: 1.0))
                 .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
-            Image(chars.img)
+            Image(ppl.img)
             HStack {
                 //Fixed Information
                 VStack(alignment: .leading) {
@@ -37,15 +37,15 @@ struct ContentView: View {
                 }
                 //Variable Information
                 VStack(alignment: .leading ) {
-                    Text(chars.name)
+                    Text(ppl.name)
                         .font(.body)
                         .fontWeight(.medium)
                         .foregroundColor(Color(red: 0.23, green: 0.23, blue: 0.23, opacity: 1.0))
-                    Text(chars.nation)
+                    Text(ppl.nation)
                         .font(.body)
                         .fontWeight(.medium)
                         .foregroundColor(Color(red: 0.23, green: 0.23, blue: 0.23, opacity: 1.0))
-                    Text(chars.powers)
+                    Text(ppl.powers)
                         .font(.body)
                         .fontWeight(.medium)
                         .foregroundColor(Color(red: 0.23, green: 0.23, blue: 0.23, opacity: 1.0))
@@ -57,6 +57,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(chars: Character)
+        ContentView(ppl: People(img: "Katara", name: "Katara", nation: "Southern Water Tribe", powers: "Water/Ice bending, blood bending"))
     }
 }

@@ -24,12 +24,12 @@ class ReferenceTests: XCTestCase {
         let name = "Sokka"
         let nation = "Southern Water Tribe"
         let powers = "None"
-        let chareg = Character(img : img, name: name, nation: nation, powers: powers)
+        let eg = People(img : img, name: name, nation: nation, powers: powers)
         
-        XCTAssertEqual(chareg.img == img)
-        XCTAssertEqual(chareg.name == name)
-        XCTAssertEqual(chareg.nation == nation)
-        XCTAssertEqual(chareg.powers == powers)
+        XCTAssertEqual(eg.img, img)
+        XCTAssertEqual(eg.name, name)
+        XCTAssertEqual(eg.nation, nation)
+        XCTAssertEqual(eg.powers, powers)
         
         
         

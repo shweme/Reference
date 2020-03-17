@@ -9,7 +9,7 @@
 import Foundation
 
 
-struct Character {
+struct People {
     var img : String
     var name: String
     var nation: String
