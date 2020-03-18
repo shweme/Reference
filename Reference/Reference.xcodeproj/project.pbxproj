@@ -109,11 +109,11 @@
 				DFD144EF241B1386003B9F75 /* People.swift */,
 				DFD144C1241B1265003B9F75 /* SceneDelegate.swift */,
 				DFD144C3241B1265003B9F75 /* ContentView.swift */,
+				AD09A6CF242088A70023E3CE /* Catalog.swift */,
 				DFD144C5241B1269003B9F75 /* Assets.xcassets */,
 				DFD144CA241B1269003B9F75 /* LaunchScreen.storyboard */,
 				DFD144CD241B1269003B9F75 /* Info.plist */,
 				DFD144C7241B1269003B9F75 /* Preview Content */,
-				AD09A6CF242088A70023E3CE /* Catalog.swift */,
 			);
 			path = Reference;
 			sourceTree = "<group>";

@@ -9,7 +9,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct ContentView: View { //Detail view
     var ppl: People
     var body: some View {
         VStack {

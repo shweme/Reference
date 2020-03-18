@@ -12,7 +12,7 @@ import SwiftUI
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-    let Katara = People(img: "Katara", name: "Katara", nation: "Southern Water Tribe", powers: "Water/Ice bending, blood bending")
+    var people: [People] = []
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
@@ -20,12 +20,20 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
 
         // Create the SwiftUI view that provides the window contents.
-        let contentView = ContentView(ppl: Katara)
+        let Katara = People(img: "Katara", name: "Katara", nation: "Southern Water Tribe", powers: "Water/Ice Bending, blood bending")
+        let Aang = People(img: "Aang", name: "Aang", nation: "Air Nomad", powers: "Air Bending, Water Bending, Earth Bending, Fire Bending, Avatar State")
+        let Sokka = People(img: "Sokka", name: "Sokka", nation: "Southern Water Tribe", powers: "Non-bender, but the smartest, most loyal human of Team Avatar")
+        let Toph = People(img: "Toph", name: "Toph", nation: "Earth", powers: "Earth Bending, inventor of Metal Bending")
+        let Zuko = People(img: "Zuko", name: "Zuko", nation: "Fire", powers: "Fire Bending, Lightning Bending")
+        let Azula = People(img: "Azula", name: "Azula", nation: "Fire", powers: "Fire Bending, Lightning Bending")
+        let Iroh = People(img: "Iroh", name: "Uncle Iroh / The Last Dragon of the West", nation: "Fire", powers: "Fire Bending, Lightning Bending, Tea Making")
+        people = [Katara, Aang, Sokka, Toph, Zuko, Azula, Iroh]
+        let catalog = Catalog(ppl: people)
 
         // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
-            window.rootViewController = UIHostingController(rootView: contentView)
+            window.rootViewController = UIHostingController(rootView: catalog)
             self.window = window
             window.makeKeyAndVisible()
         }

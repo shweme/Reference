@@ -7,20 +7,23 @@
 //
 
 import SwiftUI
-var names : [String] = ["Aang", "Katara", "Toph", "Sokka", "Zuko", "Iroh", "Azula"]
-struct Catalog: View {
+
+//var names : [String] = ["Aang", "Katara", "Toph", "Sokka", "Zuko", "Iroh", "Azula"]
+
+struct Catalog: View { //Master view
+    var ppl : [People]
     var body: some View {
         VStack {
             Text("The Last Airbender Characters")
                 .font(.title)
             Divider().background(Color.black)
-            List(0 ..< names.count) { item in
+            List(0 ..< ppl.count) { item in
                 HStack {
-                    Image(names[item])
+                    Image(self.ppl[item].img)
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 100, height: 100, alignment: .leading)
-                    Text(names[item])
+                    Text(self.ppl[item].name)
                     .frame(width: 150, height: 100, alignment: .leading)
                     Text("Subtitle >")
                         .foregroundColor(Color.gray)
@@ -32,8 +35,8 @@ struct Catalog: View {
     }
 }
 
-struct Catalog_Previews: PreviewProvider {
-    static var previews: some View {
-        Catalog()
-    }
-}
+//struct Catalog_Previews: PreviewProvider {
+//    static var previews: some View {
+//        Catalog()
+//    }
+//}
