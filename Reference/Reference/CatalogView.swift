@@ -19,7 +19,7 @@ struct CatalogView: View {
                     .frame(width: 100, height: 100, alignment: .leading)
                 Text(self.ppl[item].name)
                     .frame(width: 150, height: 100, alignment: .leading)
-                Text("Subtitle >")
+                Text(self.ppl[item].actor)
                     .foregroundColor(Color.gray)
                     .frame(width: 100, height: 100, alignment: .trailing)
             }

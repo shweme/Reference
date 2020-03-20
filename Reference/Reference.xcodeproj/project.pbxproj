@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AD08645924247ECD00E32A63 /* People.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD144EF241B1386003B9F75 /* People.swift */; };
 		AD09A6D0242088A70023E3CE /* MasterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD09A6CF242088A70023E3CE /* MasterView.swift */; };
-		AD09A6D1242088A70023E3CE /* MasterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD09A6CF242088A70023E3CE /* MasterView.swift */; };
 		AD3377282424664300297132 /* CatalogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3377272424664300297132 /* CatalogView.swift */; };
 		DFD144C0241B1265003B9F75 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD144BF241B1265003B9F75 /* AppDelegate.swift */; };
 		DFD144C2241B1265003B9F75 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD144C1241B1265003B9F75 /* SceneDelegate.swift */; };
@@ -19,7 +19,6 @@
 		DFD144D7241B1269003B9F75 /* ReferenceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD144D6241B1269003B9F75 /* ReferenceTests.swift */; };
 		DFD144E2241B1269003B9F75 /* ReferenceUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD144E1241B1269003B9F75 /* ReferenceUITests.swift */; };
 		DFD144F0241B1386003B9F75 /* People.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD144EF241B1386003B9F75 /* People.swift */; };
-		DFD144F424208460003B9F75 /* People.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD144EF241B1386003B9F75 /* People.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -291,8 +290,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AD09A6D1242088A70023E3CE /* MasterView.swift in Sources */,
-				DFD144F424208460003B9F75 /* People.swift in Sources */,
+				AD08645924247ECD00E32A63 /* People.swift in Sources */,
 				DFD144D7241B1269003B9F75 /* ReferenceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
