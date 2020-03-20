@@ -12,6 +12,7 @@ import Foundation
 struct People {
     var img : String
     var name: String
+    var pet : String
     var nation: String
     var powers: String
 }

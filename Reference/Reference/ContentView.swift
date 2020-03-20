@@ -13,11 +13,6 @@ struct ContentView: View { //Detail view
     var ppl: People
     var body: some View {
         VStack {
-            Text("TLA Characters")
-                .font(.largeTitle)
-                .fontWeight(.semibold)
-                .foregroundColor(Color(red: 0.23, green: 0.23, blue: 0.23, opacity: 1.0))
-                .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
             Image(ppl.img)
             HStack {
                 //Fixed Information
@@ -51,12 +46,50 @@ struct ContentView: View { //Detail view
                         .foregroundColor(Color(red: 0.23, green: 0.23, blue: 0.23, opacity: 1.0))
                 }
             }
+            VStack (alignment: .leading) {
+                HStack {
+                    Text("Name:")
+                        .font(.body)
+                        .fontWeight(.medium)
+                        .foregroundColor(Color(red: 0.23, green: 0.23, blue: 0.23, opacity: 1.0))
+                        Spacer()
+                    Text(ppl.name)
+                        .font(.body)
+                        .fontWeight(.medium)
+                        .foregroundColor(Color(red: 0.23, green: 0.23, blue: 0.23, opacity: 1.0))
+                        .frame(alignment: .leading)
+                }
+                HStack {
+                    Text("Nation:")
+                        .font(.body)
+                        .fontWeight(.medium)
+                        .foregroundColor(Color(red: 0.23, green: 0.23, blue: 0.23, opacity: 1.0))
+                    Spacer()
+                    Text(ppl.nation)
+                        .font(.body)
+                        .fontWeight(.medium)
+                        .foregroundColor(Color(red: 0.23, green: 0.23, blue: 0.23, opacity: 1.0))
+                        .frame(alignment: .leading)
+                }
+                HStack {
+                    Text("Powers:")
+                        .font(.body)
+                        .fontWeight(.medium)
+                        .foregroundColor(Color(red: 0.23, green: 0.23, blue: 0.23, opacity: 1.0))
+                    Spacer()
+                    Text(ppl.powers)
+                        .font(.body)
+                        .fontWeight(.medium)
+                        .foregroundColor(Color(red: 0.23, green: 0.23, blue: 0.23, opacity: 1.0))
+                        .frame(alignment: .leading)
+                }
+            }
         }
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(ppl: People(img: "Katara", name: "Katara", nation: "Southern Water Tribe", powers: "Water/Ice bending, blood bending"))
+        ContentView(ppl: People(img: "Katara", name: "Katara", pet: "", nation: "Southern Water Tribe", powers: "Water/Ice bending, blood bending"))
     }
 }

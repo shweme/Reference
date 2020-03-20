@@ -20,20 +20,21 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
 
         // Create the SwiftUI view that provides the window contents.
-        let Katara = People(img: "Katara", name: "Katara", nation: "Southern Water Tribe", powers: "Water/Ice Bending, blood bending")
-        let Aang = People(img: "Aang", name: "Aang", nation: "Air Nomad", powers: "Air Bending, Water Bending, Earth Bending, Fire Bending, Avatar State")
-        let Sokka = People(img: "Sokka", name: "Sokka", nation: "Southern Water Tribe", powers: "Non-bender, but the smartest, most loyal human of Team Avatar")
-        let Toph = People(img: "Toph", name: "Toph", nation: "Earth", powers: "Earth Bending, inventor of Metal Bending")
-        let Zuko = People(img: "Zuko", name: "Zuko", nation: "Fire", powers: "Fire Bending, Lightning Bending")
-        let Azula = People(img: "Azula", name: "Azula", nation: "Fire", powers: "Fire Bending, Lightning Bending")
-        let Iroh = People(img: "Iroh", name: "Uncle Iroh / The Last Dragon of the West", nation: "Fire", powers: "Fire Bending, Lightning Bending, Tea Making")
+        let Katara = People(img: "Katara", name: "Katara", pet: "", nation: "Southern Water Tribe", powers: "Water/Ice Bending, blood bending")
+        let Aang = People(img: "Aang", name: "Aang", pet: "", nation: "Air Nomad", powers: "Air Bending, Water Bending, Earth Bending, Fire Bending, Avatar State")
+        let Sokka = People(img: "Sokka", name: "Sokka", pet: "", nation: "Southern Water Tribe", powers: "Non-bender, but the smartest, most loyal human of Team Avatar")
+        let Toph = People(img: "Toph", name: "Toph", pet: "", nation: "Earth", powers: "Earth Bending, inventor of Metal Bending")
+        let Zuko = People(img: "Zuko", name: "Zuko", pet: "", nation: "Fire", powers: "Fire Bending, Lightning Bending")
+        let Azula = People(img: "Azula", name: "Azula", pet: "", nation: "Fire", powers: "Fire Bending, Lightning Bending")
+        let Iroh = People(img: "Iroh", name: "Uncle Iroh / The Last Dragon of the West", pet: "", nation: "Fire", powers: "Fire Bending, Lightning Bending, Tea Making")
         people = [Katara, Aang, Sokka, Toph, Zuko, Azula, Iroh]
-        let catalog = Catalog(ppl: people)
+        
+        let master = MasterView(ppl: people)
 
         // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
-            window.rootViewController = UIHostingController(rootView: catalog)
+            window.rootViewController = UIHostingController(rootView: master)
             self.window = window
             window.makeKeyAndVisible()
         }
