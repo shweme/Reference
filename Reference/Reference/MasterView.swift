@@ -7,21 +7,35 @@
 //
 
 import SwiftUI
-
-//var names : [String] = ["Aang", "Katara", "Toph", "Sokka", "Zuko", "Iroh", "Azula"]
-
 struct MasterView: View { //Master view
     var ppl : [People]
     var body: some View {
         NavigationView {
             CatalogView(ppl: ppl)
-                .navigationBarTitle("The Last Airbender")
+                .navigationBarTitle("The Last Airbender", displayMode: .automatic)
+//                .navigationBarItems(
+//                    trailing:
+//                        Button(
+//                            action: { print("Adding character profile") },
+//                            label: { Text("+").font(.largeTitle) }
+//                        )
+//                )
         }
     }
 }
 
 struct Catalog_Previews: PreviewProvider {
     static var previews: some View {
-        Text("The Last Airbender")
+        NavigationView {
+            Text("The Last Airbender")
+                .navigationBarTitle(Text("The Last Airbender"), displayMode: .automatic)
+//                .navigationBarItems(
+//                    trailing:
+//                        Button(
+//                            action: { print("Adding a character") },
+//                            label: { Text("+").font(.largeTitle)}
+//                        )
+//                )
+        }
     }
 }
