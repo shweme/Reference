@@ -20,8 +20,8 @@ struct MasterView: View { //Master view
     }
 }
 
-//struct Catalog_Previews: PreviewProvider {
-//    static var previews: some View {
-//        CatalogView()
-//    }
-//}
+struct Catalog_Previews: PreviewProvider {
+    static var previews: some View {
+        Text("The Last Airbender")
+    }
+}

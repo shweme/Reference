@@ -20,14 +20,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
 
         // Create the SwiftUI view that provides the window contents.
-        let Katara = People(img: "Katara", name: "Katara", actor: "Mae Whitman", nation: "Southern Water Tribe", powers: "Water/Ice Bending, blood bending")
+
         let Aang = People(img: "Aang", name: "Aang", actor: "Zach Tyler", nation: "Air Nomad", powers: "Air Bending, Water Bending, Earth Bending, Fire Bending, Avatar State")
+        let Katara = People(img: "Katara", name: "Katara", actor: "Mae Whitman", nation: "Southern Water Tribe", powers: "Water/Ice Bending, blood bending")
         let Sokka = People(img: "Sokka", name: "Sokka", actor: "Jack De Sena", nation: "Southern Water Tribe", powers: "Non-bender, but the smartest and most loyal human of Team Avatar")
         let Toph = People(img: "Toph", name: "Toph", actor: "Michaela Murphy", nation: "Earth", powers: "Earth Bending, inventor of Metal Bending")
         let Zuko = People(img: "Zuko", name: "Zuko", actor: "Dante Basco", nation: "Fire", powers: "Fire Bending, Lightning Bending")
         let Azula = People(img: "Azula", name: "Azula", actor: "Grey Griffin", nation: "Fire", powers: "Fire Bending, Lightning Bending")
         let Iroh = People(img: "Iroh", name: "Uncle Iroh / The Dragon of the West", actor: "Mako Iwamatsu", nation: "Fire", powers: "Fire Bending, Lightning Bending, Tea Making")
-        people = [Katara, Aang, Sokka, Toph, Zuko, Azula, Iroh]
+        people = [Aang, Katara, Sokka, Toph, Zuko, Azula, Iroh]
         
         let master = MasterView(ppl: people)
 
