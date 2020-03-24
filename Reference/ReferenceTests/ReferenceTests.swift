@@ -10,7 +10,15 @@ import XCTest
 @testable import Reference
 
 class ReferenceTests: XCTestCase {
-
+    
+    let katara = People(
+        img: "Katara",
+        name: "Katara",
+        actor: "Mae Whitman",
+        nation: "Southern Water Tribe",
+        powers: "water and ice bending, blood bending",
+        notes: "Annoying as hell")
+    
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
@@ -19,7 +27,7 @@ class ReferenceTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testPeople() {
+    func testPeople() { //testing existing model
         let img = "Sokka"
         let name = "Sokka"
         let actor = "Jack De Sena"
@@ -39,17 +47,40 @@ class ReferenceTests: XCTestCase {
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
     
-    func testModelPassing() {
-        let katara = People(img: "Katara", name: "Katara", actor: "Mae Whitman", nation: "Southern Water Tribe", powers: "water and ice bending, blood bending", notes: "Annoying as hell")
+    func testPeopleArray() { //testing whether passing an object into an array of objects works
         let sokka = People(img: "Sokka", name: "Sokka", actor: "Jack De Sena", nation: "Southern Water Tribe", powers: "none", notes: "The best of em all")
-        let tester : [People] = [katara, sokka]
+        let tester : [People] = [self.katara, sokka]
         
-        XCTAssertNotNil(tester[0].img)
-        XCTAssertNotNil(tester[0].name)
-        XCTAssertNotNil(tester[0].actor)
-        XCTAssertNotNil(tester[0].nation)
-        XCTAssertNotNil(tester[0].powers)
-        XCTAssertNotNil(tester[0].notes)
+        XCTAssertNotEqual(tester[0].img, tester[1].img)
+        XCTAssertNotEqual(tester[0].name, tester[1].name)
+        XCTAssertNotEqual(tester[0].actor, tester[1].actor)
+        XCTAssertEqual(tester[0].nation, tester[1].nation)
+        XCTAssertNotEqual(tester[0].powers, tester[1].powers)
+        XCTAssertNotEqual(tester[0].notes, tester[1].notes)
+    }
+    
+    func testImage() {
+        XCTAssertNotNil(self.katara.img)
+    }
+    
+    func testName() {
+        XCTAssertNotNil(self.katara.name)
+    }
+    
+    func testActor() {
+        XCTAssertNotNil(self.katara.actor)
+    }
+    
+    func testNation(){
+        XCTAssertNotNil(self.katara.nation)
+    }
+    
+    func testPowers() {
+        XCTAssertNotNil(self.katara.powers)
+    }
+    
+    func testNotes() {
+        XCTAssertNotNil(self.katara.notes)
     }
 
     func testPerformanceExample() {
