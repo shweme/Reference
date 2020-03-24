@@ -10,13 +10,12 @@
 import SwiftUI
 
 struct ContentView: View { //Detail view
+    @State private var text: String = ""
     var ppl: People
     var name: String = ""
     var body: some View {
         ScrollView(.vertical){
-            VStack {
-                Text("Notes:")
-                    .font(.title)
+            VStack(alignment: .leading) {
                 Image(ppl.img)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
@@ -66,6 +65,12 @@ struct ContentView: View { //Detail view
                         .foregroundColor(Color(red: 0.23, green: 0.23, blue: 0.23, opacity: 1.0))
                         .multilineTextAlignment(.leading)
                 }
+                HStack{
+                    Text("Notes:\t\t")
+                    TextField("Insert text here", text: $text)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                }
+                
             } .frame(width: 380, alignment: .center )
         }
     }
