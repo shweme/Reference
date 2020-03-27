@@ -8,18 +8,19 @@
 
 import SwiftUI
 struct MasterView: View { //Master view
-    var ppl : [People]
+    var ppl : FavePeople
     var body: some View {
         NavigationView {
             CatalogView(ppl: ppl)
                 .navigationBarTitle("The Last Airbender", displayMode: .automatic)
-//                .navigationBarItems(
-//                    trailing:
-//                        Button(
-//                            action: { print("Adding character profile") },
-//                            label: { Text("+").font(.largeTitle) }
-//                        )
-//                )
+                .navigationBarItems(
+                    leading: EditButton(),
+                    trailing:
+                        Button(
+                            action: { self.ppl.add(People(img: "Aang", name: "Aang", actor: "Zach Tyler", nation: "Air Nomad", powers: "everything", notes: "")) },
+                            label: { Text("+").font(.largeTitle) }
+                        )
+                )
         }
     }
 }
@@ -29,13 +30,14 @@ struct Catalog_Previews: PreviewProvider {
         NavigationView {
             Text("The Last Airbender")
                 .navigationBarTitle(Text("The Last Airbender"), displayMode: .automatic)
-//                .navigationBarItems(
-//                    trailing:
-//                        Button(
-//                            action: { print("Adding a character") },
-//                            label: { Text("+").font(.largeTitle)}
-//                        )
-//                )
+                .navigationBarItems(
+                    leading: EditButton(),
+                    trailing:
+                        Button(
+                            action: { print("Adding a character") },
+                            label: { Text("+").font(.largeTitle)}
+                        )
+                )
         }
     }
 }

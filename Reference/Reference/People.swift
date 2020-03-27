@@ -39,3 +39,18 @@ class People {
         self.notes = notes
     }
 }
+
+class FavePeople {
+    var pplArray : [People]
+    init() {
+        self.pplArray = []
+    }
+    
+    func add(_ add : People) {
+        self.pplArray.append(add)
+    }
+    
+    func remove(_ remove : People) {
+        self.pplArray.append(remove)
+    }
+}

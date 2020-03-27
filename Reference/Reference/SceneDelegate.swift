@@ -12,25 +12,37 @@ import SwiftUI
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-    var people: [People] = [] //people will be an array of objects of the class People that is passed to master&detail views
+    var people: FavePeople = FavePeople() //people will be an array of objects of the class People that is passed to master&detail views
+
+    
+    //
+    //      Creating objects of class People to populate the app
+    //
+    
+    let Aang = People(img: "Aang", name: "Aang", actor: "Zach Tyler", nation: "Air Nomad", powers: "Air Bending, Water Bending, Earth Bending, Fire Bending, Avatar State", notes: "")
+    let Katara = People(img: "Katara", name: "Katara", actor: "Mae Whitman", nation: "Southern Water Tribe", powers: "Water/Ice Bending, blood bending", notes: "")
+    let Sokka = People(img: "Sokka", name: "Sokka", actor: "Jack De Sena", nation: "Southern Water Tribe", powers: "Non-bender, but the smartest and most loyal human of Team Avatar", notes: "")
+    let Toph = People(img: "Toph", name: "Toph", actor: "Michaela Murphy", nation: "Earth", powers: "Earth Bending, inventor of Metal Bending", notes: "")
+    let Zuko = People(img: "Zuko", name: "Zuko", actor: "Dante Basco", nation: "Fire", powers: "Fire Bending, Lightning Bending", notes: "")
+    let Azula = People(img: "Azula", name: "Azula", actor: "Grey Griffin", nation: "Fire", powers: "Fire Bending, Lightning Bending", notes: "")
+    let Iroh = People(img: "Iroh", name: "Uncle Iroh / The Dragon of the West", actor: "Mako Iwamatsu", nation: "Fire", powers: "Fire Bending, Lightning Bending, Tea Making", notes: "")
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         // Create the SwiftUI view that provides the window contents.
+
         
-        //
-        //      Creating objects of class People to populate the app
-        //
-        let Aang = People(img: "Aang", name: "Aang", actor: "Zach Tyler", nation: "Air Nomad", powers: "Air Bending, Water Bending, Earth Bending, Fire Bending, Avatar State", notes: "")
-        let Katara = People(img: "Katara", name: "Katara", actor: "Mae Whitman", nation: "Southern Water Tribe", powers: "Water/Ice Bending, blood bending", notes: "")
-        let Sokka = People(img: "Sokka", name: "Sokka", actor: "Jack De Sena", nation: "Southern Water Tribe", powers: "Non-bender, but the smartest and most loyal human of Team Avatar", notes: "")
-        let Toph = People(img: "Toph", name: "Toph", actor: "Michaela Murphy", nation: "Earth", powers: "Earth Bending, inventor of Metal Bending", notes: "")
-        let Zuko = People(img: "Zuko", name: "Zuko", actor: "Dante Basco", nation: "Fire", powers: "Fire Bending, Lightning Bending", notes: "")
-        let Azula = People(img: "Azula", name: "Azula", actor: "Grey Griffin", nation: "Fire", powers: "Fire Bending, Lightning Bending", notes: "")
-        let Iroh = People(img: "Iroh", name: "Uncle Iroh / The Dragon of the West", actor: "Mako Iwamatsu", nation: "Fire", powers: "Fire Bending, Lightning Bending, Tea Making", notes: "")
-        people = [Aang, Katara, Sokka, Toph, Zuko, Azula, Iroh]
+//        people = [Aang, Katara, Sokka, Toph, Zuko, Azula, Iroh]
+        
+        people.add(Aang)
+        people.add(Katara)
+        people.add(Sokka)
+        people.add(Toph)
+        people.add(Zuko)
+        people.add(Azula)
+        people.add(Iroh)
         
         let master = MasterView(ppl: people) //could be replaced by appending in line 40:... (rootView: MasterView(ppl: people))
 
