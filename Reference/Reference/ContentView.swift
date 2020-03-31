@@ -15,7 +15,7 @@ struct ContentView: View { //Traditionally named DetailView
     @State var ppl: People //singular instance of People containing data of character
     var body: some View {
         ScrollView(.vertical){ //To enable scrolling on portrait and landscape orientation
-            VStack(alignment: .leading) {
+            VStack() {
                 Image(ppl.img)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
@@ -25,53 +25,45 @@ struct ContentView: View { //Traditionally named DetailView
                     Text("Name:\t\t")
                         .font(.body)
                         .fontWeight(.medium)
-                        .foregroundColor(Color(red: 0.23, green: 0.23, blue: 0.23, opacity: 1.0))
-                    Text(ppl.name)
-                        .font(.body)
-                        .fontWeight(.medium)
-                        .foregroundColor(Color(red: 0.23, green: 0.23, blue: 0.23, opacity: 1.0))
-                        .multilineTextAlignment(.leading)
-                }
+                        .foregroundColor(Color(red: 0.23, green: 0.23, blue: 0.23))
+                    TextField("Character's name", text: $ppl.name)//binding placeholder text to retain changes through navigation
+                        .textFieldStyle(RoundedBorderTextFieldStyle())                }
                 HStack { //contains fixed field nation and referenced field native home of character
                     Text("Nation:\t")
                         .font(.body)
                         .fontWeight(.medium)
                         .foregroundColor(Color(red: 0.23, green: 0.23, blue: 0.23, opacity: 1.0))
-                    Text(ppl.nation)
-                        .font(.body)
-                        .fontWeight(.medium)
-                        .foregroundColor(Color(red: 0.23, green: 0.23, blue: 0.23, opacity: 1.0))
-                        .multilineTextAlignment(.leading)
+                    TextField("Nation character hails from", text: $ppl.nation)//binding placeholder text to retain changes through navigation
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
                 }
-                HStack(alignment: .top) { //contains fixed field powers and referenced field powers of character
-                    Text("Powers:\t")
+                HStack { //contains fixed field powers and referenced field powers of character
+                    Text("Skills:\t\t")
                         .font(.body)
                         .fontWeight(.medium)
                         .foregroundColor(Color(red: 0.23, green: 0.23, blue: 0.23, opacity: 1.0))
-                    Text(ppl.powers)
-                        .font(.body)
-                        .fontWeight(.medium)
-                        .foregroundColor(Color(red: 0.23, green: 0.23, blue: 0.23, opacity: 1.0))
-                        .multilineTextAlignment(.leading)
+                    TextField("Character's skills and bending powers", text: $ppl.powers)//binding placeholder text to retain changes through navigation
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                    
                 }
                 HStack { //contains fixed field voiced by and referenced field name of character's voice actor
                     Text("Voiced by:\t")
                         .font(.body)
                         .fontWeight(.medium)
                         .foregroundColor(Color(red: 0.23, green: 0.23, blue: 0.23, opacity: 1.0))
-                    Text(ppl.actor)
-                        .font(.body)
-                        .fontWeight(.medium)
-                        .foregroundColor(Color(red: 0.23, green: 0.23, blue: 0.23, opacity: 1.0))
-                        .multilineTextAlignment(.leading)
+                    TextField("Voice actor for character in TLA", text: $ppl.actor)//binding placeholder text to retain changes through navigation
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
                 }
                 HStack{
                     Text("Notes:\t\t")
+                        .font(.body)
+                        .fontWeight(.medium)
+                        .foregroundColor(Color(red: 0.23, green: 0.23, blue: 0.23, opacity: 1.0))
                     TextField("Insert text here", text: $ppl.notes)//binding placeholder text to retain changes through navigation
                         .textFieldStyle(RoundedBorderTextFieldStyle())
+
+                    TextView(txt: $ppl.notes)
                 }
-                
-            } .frame(width: 380, alignment: .center )
+            } .frame(width: UIScreen.main.bounds.width-50, alignment: .center )
         }
     }
 }

@@ -10,6 +10,7 @@
 		AD08645924247ECD00E32A63 /* People.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD144EF241B1386003B9F75 /* People.swift */; };
 		AD09A6D0242088A70023E3CE /* MasterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD09A6CF242088A70023E3CE /* MasterView.swift */; };
 		AD3377282424664300297132 /* CatalogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3377272424664300297132 /* CatalogView.swift */; };
+		ADC53E63243301D20061A687 /* textView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC53E62243301D20061A687 /* textView.swift */; };
 		DFD144C0241B1265003B9F75 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD144BF241B1265003B9F75 /* AppDelegate.swift */; };
 		DFD144C2241B1265003B9F75 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD144C1241B1265003B9F75 /* SceneDelegate.swift */; };
 		DFD144C4241B1265003B9F75 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD144C3241B1265003B9F75 /* ContentView.swift */; };
@@ -41,6 +42,7 @@
 /* Begin PBXFileReference section */
 		AD09A6CF242088A70023E3CE /* MasterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterView.swift; sourceTree = "<group>"; };
 		AD3377272424664300297132 /* CatalogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogView.swift; sourceTree = "<group>"; };
+		ADC53E62243301D20061A687 /* textView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = textView.swift; sourceTree = "<group>"; };
 		DFD144BC241B1265003B9F75 /* Reference.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reference.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFD144BF241B1265003B9F75 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DFD144C1241B1265003B9F75 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -109,9 +111,10 @@
 				DFD144BF241B1265003B9F75 /* AppDelegate.swift */,
 				DFD144EF241B1386003B9F75 /* People.swift */,
 				DFD144C1241B1265003B9F75 /* SceneDelegate.swift */,
-				DFD144C3241B1265003B9F75 /* ContentView.swift */,
-				AD09A6CF242088A70023E3CE /* MasterView.swift */,
 				AD3377272424664300297132 /* CatalogView.swift */,
+				AD09A6CF242088A70023E3CE /* MasterView.swift */,
+				DFD144C3241B1265003B9F75 /* ContentView.swift */,
+				ADC53E62243301D20061A687 /* textView.swift */,
 				DFD144C5241B1269003B9F75 /* Assets.xcassets */,
 				DFD144CA241B1269003B9F75 /* LaunchScreen.storyboard */,
 				DFD144CD241B1269003B9F75 /* Info.plist */,
@@ -281,6 +284,7 @@
 				DFD144C0241B1265003B9F75 /* AppDelegate.swift in Sources */,
 				DFD144C2241B1265003B9F75 /* SceneDelegate.swift in Sources */,
 				DFD144C4241B1265003B9F75 /* ContentView.swift in Sources */,
+				ADC53E63243301D20061A687 /* textView.swift in Sources */,
 				DFD144F0241B1386003B9F75 /* People.swift in Sources */,
 				AD3377282424664300297132 /* CatalogView.swift in Sources */,
 			);
