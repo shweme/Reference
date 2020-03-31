@@ -16,6 +16,9 @@ struct TextView: UIViewRepresentable {
     func makeUIView(context: UIViewRepresentableContext<TextView>) -> UITextView {
         let textView = UITextView()
         
+        textView.textContainer.lineFragmentPadding = 5
+        textView.textContainerInset = .zero
+        
         // Round the corners.
         textView.layer.masksToBounds = true
 

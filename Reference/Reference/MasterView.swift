@@ -1,43 +1,38 @@
 //
-//  MasterView.swift
+//  CatalogView.swift
 //  Reference
 //
-//  Created by Shweta Mehta on 17/3/20.
+//  Created by Shweta Mehta on 20/3/20.
 //  Copyright © 2020 Mobile Application Development. All rights reserved.
 //
 
 import SwiftUI
-struct MasterView: View { //Master view
-    var ppl : FavePeople
-    var body: some View {
-        NavigationView {
-            CatalogView(ppl: ppl)
-                .navigationBarTitle("The Last Airbender", displayMode: .automatic)
-                .navigationBarItems(
-                    leading: EditButton(),
-                    trailing:
-                        Button(
-                            action: { self.ppl.add(People(img: "Aang", name: "Aang", actor: "Zach Tyler", nation: "Air Nomad", powers: "everything", notes: "")) },
-                            label: { Text("+").font(.largeTitle) }
-                        )
-                )
-        }
+
+struct MasterView: View {
+    @ObservedObject var ppl : FavePeople
+    var body : some View {
+        List {
+            ForEach(ppl.pplArray)  { item in
+                NavigationLink(destination: DetailView(ppl: item)){
+                    Image(item.img)
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 100, height: 100, alignment: .leading)
+                    Text(item.name)
+                        .frame(width: 150, height: 100, alignment: .leading)
+                    Text(item.actor)
+                        .foregroundColor(Color.gray)
+                        .frame(width: 100, height: 100, alignment: .trailing)
+                }
+            }.onDelete (perform: self.ppl.remove)
+            }
+        .frame(width: 420.0)
     }
 }
 
-struct Catalog_Previews: PreviewProvider {
-    static var previews: some View {
-        NavigationView {
-            Text("The Last Airbender")
-                .navigationBarTitle(Text("The Last Airbender"), displayMode: .automatic)
-                .navigationBarItems(
-                    leading: EditButton(),
-                    trailing:
-                        Button(
-                            action: { print("Adding a character") },
-                            label: { Text("+").font(.largeTitle)}
-                        )
-                )
-        }
-    }
-}
+
+//struct CatalogView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        CatalogView(ppl: FavePeople.pplArray[(img: "Aang", name: "Aang", actor: "Zach Tyler", nation: "Air Nomad", powers: "everything", notes: ""), People(img: "Katara", name: "Katara", actor: "Mae Whitman", nation: "Southern Water Tribe", powers: "Water/Ice bending, blood bending", notes: ""), People(img: "Sokka", name: "Sokka", actor: "Jack De Sena", nation: "Southern Water Tribe", powers: "None", notes: ""), People(img: "Toph", name: "Toph", actor: "Michaela Murphy", nation: "Earth", powers: "Earth Bending, Metal Bending", notes: ""), People(img: "Zuko", name: "Zuko", actor: "Dante Basco", nation: "Fire Nation", powers: "Fire Bending, Lightning Bending", notes: ""), People(img: "Azula", name: "Azula", actor: "Grey Griffin", nation: "Fire Nation", powers: "Fire bending, Lightning bending", notes: ""), People(img: "Iroh", name: "Uncle Iroh/ Dragon of the West", actor: "Mako Iwamasu", nation: "Fire Nation", powers: "Fire Bending, Lightning bending", notes: "")])
+//    }
+//}

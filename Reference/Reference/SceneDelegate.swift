@@ -44,12 +44,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         people.add(Azula)
         people.add(Iroh)
         
-        let master = MasterView(ppl: people) //could be replaced by appending in line 40:... (rootView: MasterView(ppl: people))
+        let contentView = ContentView(ppl: people) //could be replaced by appending in line 40:... (rootView: MasterView(ppl: people))
 
         // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
-            window.rootViewController = UIHostingController(rootView: master)
+            window.rootViewController = UIHostingController(rootView: contentView)
             self.window = window
             window.makeKeyAndVisible()
         }
