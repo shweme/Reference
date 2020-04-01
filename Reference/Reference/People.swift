@@ -8,6 +8,7 @@
 //  Copyright © 2020 Mobile Application Development. All rights reserved.
 //
 
+import SwiftUI
 import Foundation
 
 //The struct People is the model for this application and all instances of People must include values for an image, name, actor, nation, powers, notes
@@ -23,15 +24,23 @@ import Foundation
 
 
 class People : ObservableObject, Identifiable {
-    @Published var img : String
+    @Published var imgUrl : String?
+    var img: Image {
+        if let u = imgUrl {
+            return imgDownload(u)
+        } else {
+            return Image("Default")
+        }
+    }
+    //@Published var img : Image?
     @Published var name: String
     @Published var actor : String
     @Published var nation: String
     @Published var powers: String
     @Published var notes: String
     
-    init(img: String, name: String, actor: String, nation: String, powers: String, notes: String){
-        self.img = img
+    init(imgUrl: String?, name: String, actor: String, nation: String, powers: String, notes: String){
+        self.imgUrl = imgUrl
         self.name = name
         self.actor = actor
         self.nation = nation

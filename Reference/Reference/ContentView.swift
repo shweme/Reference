@@ -18,7 +18,7 @@ struct ContentView: View { //Master view
                     trailing:
                         Button(
                             action: {
-                                withAnimation { self.ppl.add(People(img: "Default", name: "", actor: "", nation: "", powers: "", notes: "")); print(self.ppl)}
+                                withAnimation { self.ppl.add(People(imgUrl: "Default", name: "", actor: "", nation: "", powers: "", notes: "")); print(self.ppl)}
                         },
                             label: { Text("+").font(.largeTitle) }
                         )

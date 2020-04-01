@@ -7,12 +7,14 @@
 //
 
 import XCTest
+import SwiftUI
 @testable import Reference
 
 class ReferenceTests: XCTestCase {
     
     let katara = People(
-        img: "Katara",
+        imgUrl: "https://en.wikipedia.org/wiki/Aang#/media/File:Avatar_Aang.png",
+        img: nil,
         name: "Katara",
         actor: "Mae Whitman",
         nation: "Southern Water Tribe",
@@ -28,13 +30,15 @@ class ReferenceTests: XCTestCase {
     }
 
     func testPeople() { //testing existing model
-        let img = "Sokka"
+        
+        let imgUrl = "https://en.wikipedia.org/wiki/Sokka#/media/File:Sokka.png"
+        let img: Image? = nil
         let name = "Sokka"
         let actor = "Jack De Sena"
         let nation = "Southern Water Tribe"
         let powers = "None"
         let notes = "The best of em all"
-        let eg = People(img : img, name: name, actor: actor, nation: nation, powers: powers, notes: notes)
+        let eg = People(imgUrl: imgUrl, img : img, name: name, actor: actor, nation: nation, powers: powers, notes: notes)
         
         XCTAssertEqual(eg.img, img)
         XCTAssertEqual(eg.name, name)
@@ -48,7 +52,7 @@ class ReferenceTests: XCTestCase {
     }
     
     func testPeopleArray() { //testing whether passing an object into an array of objects works
-        let sokka = People(img: "Sokka", name: "Sokka", actor: "Jack De Sena", nation: "Southern Water Tribe", powers: "none", notes: "The best of em all")
+        let sokka = People(imgUrl: "https://en.wikipedia.org/wiki/Sokka#/media/File:Sokka.png", img: nil, name: "Sokka", actor: "Jack De Sena", nation: "Southern Water Tribe", powers: "none", notes: "The best of em all")
         let tester : [People] = [self.katara, sokka]
         
         XCTAssertNotEqual(tester[0].img, tester[1].img)
@@ -81,6 +85,20 @@ class ReferenceTests: XCTestCase {
     
     func testNotes() {
         XCTAssertNotNil(self.katara.notes)
+    }
+    
+    func testImageDownload() {
+        guard let imgUrl = try? URL(string: "https://www.google.com/logos/doodles/2020/dame-jean-macnamaras-121st-birthday-6753651837108336.4-l.png") else {
+            return XCTFail("Invalid URL")
+        }
+        guard let imgData = try? Data(contentsOf: imgUrl) else {
+            return XCTFail("Could not download image")
+        }
+        guard let uiImg = UIImage(data: imgData) else {
+            return XCTFail("Downloaded data does not contain image")
+        }
+        let downloadedImg = Image(uiImage: uiImg)
+        XCTAssertNotNil(downloadedImg)
     }
 
     func testPerformanceExample() {

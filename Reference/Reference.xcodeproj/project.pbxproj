@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		AD08645924247ECD00E32A63 /* People.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD144EF241B1386003B9F75 /* People.swift */; };
 		AD09A6D0242088A70023E3CE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD09A6CF242088A70023E3CE /* ContentView.swift */; };
+		AD1090CF24344B970088531A /* Download.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1090CE24344B970088531A /* Download.swift */; };
 		AD3377282424664300297132 /* MasterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3377272424664300297132 /* MasterView.swift */; };
 		ADC53E63243301D20061A687 /* textView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC53E62243301D20061A687 /* textView.swift */; };
 		ADC53E652433174F0061A687 /* FavePeople.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC53E642433174F0061A687 /* FavePeople.swift */; };
@@ -42,6 +43,7 @@
 
 /* Begin PBXFileReference section */
 		AD09A6CF242088A70023E3CE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		AD1090CE24344B970088531A /* Download.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Download.swift; sourceTree = "<group>"; };
 		AD3377272424664300297132 /* MasterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterView.swift; sourceTree = "<group>"; };
 		ADC53E62243301D20061A687 /* textView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = textView.swift; sourceTree = "<group>"; };
 		ADC53E642433174F0061A687 /* FavePeople.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavePeople.swift; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 				ADC53E62243301D20061A687 /* textView.swift */,
 				DFD144EF241B1386003B9F75 /* People.swift */,
 				ADC53E642433174F0061A687 /* FavePeople.swift */,
+				AD1090CE24344B970088531A /* Download.swift */,
 				DFD144C5241B1269003B9F75 /* Assets.xcassets */,
 				DFD144CA241B1269003B9F75 /* LaunchScreen.storyboard */,
 				DFD144CD241B1269003B9F75 /* Info.plist */,
@@ -283,6 +286,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD1090CF24344B970088531A /* Download.swift in Sources */,
 				AD09A6D0242088A70023E3CE /* ContentView.swift in Sources */,
 				DFD144C0241B1265003B9F75 /* AppDelegate.swift in Sources */,
 				ADC53E652433174F0061A687 /* FavePeople.swift in Sources */,

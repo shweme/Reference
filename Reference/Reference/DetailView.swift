@@ -13,14 +13,21 @@ import SwiftUI
 
 struct DetailView: View { //Traditionally named DetailView
     @ObservedObject var ppl: People //singular instance of People containing data of character
+    @State var tempUrl: String = ""
+    var c : Color = .gray
     var body: some View {
         ScrollView(.vertical){ //To enable scrolling on portrait and landscape orientation
             VStack() {
-                Image(ppl.img)
+                ppl.img
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 350, height: 350, alignment: .center)
                     .multilineTextAlignment(.center)
+                TextField("Enter url to load picture", text: $tempUrl, onCommit: {
+                    self.ppl.imgUrl = self.tempUrl
+                })//binding placeholder text to retain changes through navigation
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .foregroundColor(c)
                 HStack { //contains fixed field name and referenced field name of character
                     Text("Name:\t\t")
                         .font(.body)
@@ -60,7 +67,6 @@ struct DetailView: View { //Traditionally named DetailView
                         .foregroundColor(Color(red: 0.23, green: 0.23, blue: 0.23, opacity: 1.0))
                     TextField("Insert text here", text: $ppl.notes)//binding placeholder text to retain changes through navigation
                         .textFieldStyle(RoundedBorderTextFieldStyle())
-
                     TextView(txt: $ppl.notes)
                 }
             } .frame(width: UIScreen.main.bounds.width-50, alignment: .center )
@@ -70,6 +76,6 @@ struct DetailView: View { //Traditionally named DetailView
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailView(ppl: People(img: "Katara", name: "Katara", actor: "Mae Whitman", nation: "Southern Water Tribe", powers: "Water/Ice bending, blood bending", notes: ""))
+        DetailView(ppl: People(imgUrl: "https://en.wikipedia.org/wiki/Katara_(Avatar:_The_Last_Airbender)#/media/File:Katara.png", name: "Katara", actor: "Mae Whitman", nation: "Southern Water Tribe", powers: "Water/Ice bending, blood bending", notes: ""))
     }
 }
