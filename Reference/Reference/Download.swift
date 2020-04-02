@@ -10,7 +10,7 @@ import Foundation
 import SwiftUI
 
 func imgDownload(_ img: String) -> Image {
-    guard let imgUrl = try? URL(string: img) else {
+    guard let imgUrl = URL(string: img) else {
         return (Image("Default"))
     }
     guard let imgData = try? Data(contentsOf: imgUrl) else {

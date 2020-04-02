@@ -21,8 +21,8 @@ struct RowItem: View {
             Text(self.rowPerson.actor)
                 .foregroundColor(Color.gray)
                 .frame(width: 100, height: 100, alignment: .trailing)
-
         }
+        .padding(.trailing)
     }
 }
 

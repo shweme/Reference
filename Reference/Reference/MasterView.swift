@@ -17,7 +17,7 @@ struct MasterView: View {
                     RowItem(rowPerson: item)
                 }
             }.onDelete {indices in self.ppl.remove(indices)}
-        }.frame(width: 420.0)
+        }.frame(width: UIScreen.main.bounds.width-25)
     }
 }
 
