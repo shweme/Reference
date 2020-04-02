@@ -2,6 +2,8 @@
 //  RowItem.swift
 //  Reference
 //
+//  Creates the row view for each item in the list of FavePeople
+//
 //  Created by Shweta Mehta on 2/4/20.
 //  Copyright © 2020 Mobile Application Development. All rights reserved.
 //
@@ -9,7 +11,7 @@
 import SwiftUI
 
 struct RowItem: View {
-    @ObservedObject var rowPerson: People
+    @ObservedObject var rowPerson: People //contains instance of a singular character
     var body: some View {
         HStack {
             rowPerson.img
@@ -17,12 +19,14 @@ struct RowItem: View {
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 100, height: 100, alignment: .leading)
             Text(self.rowPerson.name)
-                .frame(width: 150, height: 100, alignment: .leading)
+                .fontWeight(.medium)
+                .frame(alignment: .leading)
+            Spacer()
             Text(self.rowPerson.actor)
                 .foregroundColor(Color.gray)
-                .frame(width: 100, height: 100, alignment: .trailing)
+                .frame(alignment: .trailing)
         }
-        .padding(.trailing)
+        .padding([.trailing])
     }
 }
 

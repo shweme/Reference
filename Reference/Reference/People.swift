@@ -1,5 +1,5 @@
 //
-//  Characters.swift
+//  People.swift
 //  Reference
 //
 //  The model that the Reference app will use.
@@ -11,20 +11,12 @@
 import SwiftUI
 import Foundation
 
-//The struct People is the model for this application and all instances of People must include values for an image, name, actor, nation, powers, notes
-//struct sPeople {
-//    var img : String
-//    var name: String
-//    var actor : String
-//    var nation: String
-//    var powers: String
-//    var notes: String
-//}
-//The struct has been abandoned for a mutable class that allows objects to change values even when it's reference changes values
-
-
 class People : ObservableObject, Identifiable {
-    @Published var imgUrl : String?
+    
+    @Published var imgUrl : String? //stores the url of the image user MIGHT want to download
+    
+    //img allows the entered url to be converted to an Image directly without
+    //having to call imgDownload() everytime a picture needs to be displayed
     var img: Image {
         if let u = imgUrl {
             return imgDownload(u)
@@ -32,13 +24,16 @@ class People : ObservableObject, Identifiable {
             return Image("Default")
         }
     }
-    //@Published var img : Image?
-    @Published var name: String
-    @Published var actor : String
-    @Published var nation: String
-    @Published var powers: String
-    @Published var notes: String
     
+    //purely character related information for displaying, all stored as Strings
+    @Published var name: String //Character's name
+    @Published var actor : String //The voice actor for the above character
+    @Published var nation: String //The nation said character hails from
+    @Published var powers: String //The skills and bending powers of character
+    @Published var notes: String //Any notes the user would like to add
+    
+    
+    //initialiser for all instance variables of the People class
     init(imgUrl: String?, name: String, actor: String, nation: String, powers: String, notes: String){
         self.imgUrl = imgUrl
         self.name = name

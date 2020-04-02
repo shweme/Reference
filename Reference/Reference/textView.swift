@@ -24,7 +24,7 @@ struct TextView: UIViewRepresentable {
 
         // Set the size of the roundness.
         textView.layer.cornerRadius = 5.0
-
+        
         // Set the thickness of the border.
         textView.layer.borderWidth = 1
 

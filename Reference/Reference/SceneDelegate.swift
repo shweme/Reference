@@ -24,18 +24,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     let Zuko = People(imgUrl: "https://vignette.wikia.nocookie.net/villains/images/2/23/Principe_zuko_by_yuzumi2000-d6lbrj4.png/revision/latest?cb=20170611234341", name: "Zuko", actor: "Dante Basco", nation: "Fire", powers: "Fire Bending, Lightning Bending", notes: "")
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
-        // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
-        // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-        // Create the SwiftUI view that provides the window contents.
         
         people.add(Aang)
         people.add(Sokka)
         people.add(Zuko)
         
-        let contentView = ContentView(ppl: people) //could be replaced by appending in line 40:... (rootView: MasterView(ppl: people))
+        let contentView = ContentView(ppl: people)
+        //could be replaced by appending in line 40:"... (rootView: MasterView(ppl: people))"
 
-        // Use a UIHostingController as window root view controller.
+        // Using a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
             window.rootViewController = UIHostingController(rootView: contentView)

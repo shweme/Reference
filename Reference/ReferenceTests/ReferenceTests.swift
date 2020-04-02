@@ -86,7 +86,7 @@ class ReferenceTests: XCTestCase {
     }
     
     func testImageDownload() {
-        guard let imgUrl = try? URL(string: "https://www.google.com/logos/doodles/2020/dame-jean-macnamaras-121st-birthday-6753651837108336.4-l.png") else {
+        guard let imgUrl = URL(string: "https://www.google.com/logos/doodles/2020/dame-jean-macnamaras-121st-birthday-6753651837108336.4-l.png") else {
             return XCTFail("Invalid URL")
         }
         guard let imgData = try? Data(contentsOf: imgUrl) else {
