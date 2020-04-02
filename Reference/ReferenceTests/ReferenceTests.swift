@@ -14,7 +14,6 @@ class ReferenceTests: XCTestCase {
     
     let katara = People(
         imgUrl: "https://en.wikipedia.org/wiki/Aang#/media/File:Avatar_Aang.png",
-        img: nil,
         name: "Katara",
         actor: "Mae Whitman",
         nation: "Southern Water Tribe",
@@ -31,16 +30,15 @@ class ReferenceTests: XCTestCase {
 
     func testPeople() { //testing existing model
         
-        let imgUrl = "https://en.wikipedia.org/wiki/Sokka#/media/File:Sokka.png"
-        let img: Image? = nil
+        let imgUrl = "https://mystickermania.com/cdn/stickers/cartoons/avatar-the-last-airbender-appa.svg"
         let name = "Sokka"
         let actor = "Jack De Sena"
         let nation = "Southern Water Tribe"
         let powers = "None"
         let notes = "The best of em all"
-        let eg = People(imgUrl: imgUrl, img : img, name: name, actor: actor, nation: nation, powers: powers, notes: notes)
+        let eg = People(imgUrl: imgUrl, name: name, actor: actor, nation: nation, powers: powers, notes: notes)
         
-        XCTAssertEqual(eg.img, img)
+        XCTAssertEqual(eg.imgUrl, imgUrl)
         XCTAssertEqual(eg.name, name)
         XCTAssertEqual(eg.actor, actor)
         XCTAssertEqual(eg.nation, nation)
@@ -52,10 +50,10 @@ class ReferenceTests: XCTestCase {
     }
     
     func testPeopleArray() { //testing whether passing an object into an array of objects works
-        let sokka = People(imgUrl: "https://en.wikipedia.org/wiki/Sokka#/media/File:Sokka.png", img: nil, name: "Sokka", actor: "Jack De Sena", nation: "Southern Water Tribe", powers: "none", notes: "The best of em all")
+        let sokka = People(imgUrl: "https://mystickermania.com/cdn/stickers/cartoons/avatar-the-last-airbender-appa.svg", name: "Sokka", actor: "Jack De Sena", nation: "Southern Water Tribe", powers: "none", notes: "The best of em all")
         let tester : [People] = [self.katara, sokka]
         
-        XCTAssertNotEqual(tester[0].img, tester[1].img)
+        XCTAssertNotEqual(tester[0].imgUrl, tester[1].imgUrl)
         XCTAssertNotEqual(tester[0].name, tester[1].name)
         XCTAssertNotEqual(tester[0].actor, tester[1].actor)
         XCTAssertEqual(tester[0].nation, tester[1].nation)
@@ -63,8 +61,8 @@ class ReferenceTests: XCTestCase {
         XCTAssertNotEqual(tester[0].notes, tester[1].notes)
     }
     
-    func testImage() {
-        XCTAssertNotNil(self.katara.img)
+    func testImageUrl() {
+        XCTAssertNotNil(self.katara.imgUrl)
     }
     
     func testName() {

@@ -19,9 +19,8 @@ struct ContentView: View { //Master view
                         Button(
                             action: {
                                 withAnimation { self.ppl.add(People(imgUrl: "Default", name: "", actor: "", nation: "", powers: "", notes: "")); print(self.ppl)}
-                        },
-                            label: { Text("+").font(.largeTitle) }
-                        )
+                        }
+                        ) {Image(systemName: "plus")}
                 )
         }
     }

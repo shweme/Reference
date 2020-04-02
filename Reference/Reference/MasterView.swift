@@ -14,23 +14,12 @@ struct MasterView: View {
         List {
             ForEach(ppl.pplArray)  { item in
                 NavigationLink(destination: DetailView(ppl: item)){
-                    item.img
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 100, height: 100, alignment: .leading)
-                    Text(item.name)
-                        .frame(width: 150, height: 100, alignment: .leading)
-                    Text(item.actor)
-                        .foregroundColor(Color.gray)
-                        .frame(width: 100, height: 100, alignment: .trailing)
-                    
+                    RowItem(rowPerson: item)
                 }
-            }.onDelete (perform: self.ppl.remove)
-            }
-        .frame(width: 420.0)
+            }.onDelete {indices in self.ppl.remove(indices)}
+        }.frame(width: 420.0)
     }
 }
-
 
 //struct CatalogView_Previews: PreviewProvider {
 //    static var previews: some View {
