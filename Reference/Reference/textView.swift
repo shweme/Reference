@@ -12,6 +12,7 @@ struct TextView: UIViewRepresentable {
     typealias UIViewType = UITextView
     
     @Binding var txt : String
+    var placeholderText: String = "Insert notes here"
     
     func makeUIView(context: UIViewRepresentableContext<TextView>) -> UITextView {
         let textView = UITextView()
@@ -29,7 +30,9 @@ struct TextView: UIViewRepresentable {
         textView.layer.borderWidth = 1
 
         // Set the border color to black.
-        textView.layer.borderColor = UIColor.lightGray.cgColor
+        textView.layer.borderColor = UIColor.gray.cgColor
+        
+        
         
         // Set the font.
         textView.font = UIFont.systemFont(ofSize: 16.0)
@@ -37,17 +40,8 @@ struct TextView: UIViewRepresentable {
         // Set left justified.
         textView.textAlignment = NSTextAlignment.left
 
-        textView.text = txt
-        
-        
-        if textView.textColor == UIColor.lightGray {
-            textView.text = nil
-            textView.textColor = UIColor.black
-        }
-        else if textView.text.isEmpty {
-            textView.text = "Insert notes here"
-            textView.textColor = UIColor.lightGray
-        }
+        textView.text = placeholderText
+        textView.textColor = .placeholderText
 
         // Automatically detect links, dates, etc. and convert them to links.
         textView.dataDetectorTypes = UIDataDetectorTypes.all
@@ -59,6 +53,25 @@ struct TextView: UIViewRepresentable {
     }
     
     func updateUIView(_ uiView: UITextView, context: UIViewRepresentableContext<TextView>) {
+    }
+    
+    func makeCoordinator() -> TextView.Coordinator {
+        Coordinator(self)
+    }
+    
+    class Coordinator: NSObject, UITextViewDelegate {
+        var parent : TextView
+        
+        init(_ parent: TextView) {
+            self.parent = parent
+        }
+        
+        func textViewDidBeginEditing(_ textView: UITextView) {
+            if textView.textColor == .placeholderText && textView.text == "Insert notes here" {
+                textView.text = ""
+                textView.textColor = .label
+            }
+        }
     }
 }
 

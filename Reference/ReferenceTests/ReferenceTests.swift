@@ -49,16 +49,14 @@ class ReferenceTests: XCTestCase {
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
     
-    func testPeopleArray() { //testing whether passing an object into an array of objects works
-        let sokka = People(imgUrl: "https://mystickermania.com/cdn/stickers/cartoons/avatar-the-last-airbender-appa.svg", name: "Sokka", actor: "Jack De Sena", nation: "Southern Water Tribe", powers: "none", notes: "The best of em all")
-        let tester : [People] = [self.katara, sokka]
+    func testFavePeople() { //testing whether passing an object into an array of objects works
+        let testFave: FavePeople = FavePeople()
+        testFave.add(People(imgUrl: "https://mystickermania.com/cdn/stickers/cartoons/avatar-the-last-airbender-appa.svg", name: "Sokka", actor: "Jack De Sena", nation: "Southern Water Tribe", powers: "none", notes: "The best of em all"))
         
-        XCTAssertNotEqual(tester[0].imgUrl, tester[1].imgUrl)
-        XCTAssertNotEqual(tester[0].name, tester[1].name)
-        XCTAssertNotEqual(tester[0].actor, tester[1].actor)
-        XCTAssertEqual(tester[0].nation, tester[1].nation)
-        XCTAssertNotEqual(tester[0].powers, tester[1].powers)
-        XCTAssertNotEqual(tester[0].notes, tester[1].notes)
+        XCTAssertEqual(1, testFave.pplArray.count)
+        
+        testFave.remove([0])
+        XCTAssertEqual(0, testFave.pplArray.count)
     }
     
     func testImageUrl() {

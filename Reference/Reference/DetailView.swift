@@ -18,7 +18,9 @@ struct DetailView: View { //Traditionally named DetailView
     var body: some View {
         ScrollView(.vertical){ //To enable scrolling on portrait and landscape orientation
             VStack() {
-                
+                Text(ppl.name)
+                    .font(.largeTitle)
+                    .fontWeight(.medium)
                 //Image display and edit field
                 ppl.img
                     .resizable()
@@ -68,14 +70,13 @@ struct DetailView: View { //Traditionally named DetailView
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                 }
                 
-                HStack {
+                HStack { //contains fixed field notes and a text field for user to enter notes in
                     Text("Notes:\t\t")
                         .font(.body)
                         .fontWeight(.medium)
                         .foregroundColor(Color(red: 0.23, green: 0.23, blue: 0.23, opacity: 1.0))
                     TextField("Insert text here", text: $ppl.notes)//binding placeholder text to retain changes through navigation
                         .textFieldStyle(RoundedBorderTextFieldStyle())
-                    TextView(txt: $ppl.notes) //trying to create a multi-line text field
                 }
             } .frame(width: UIScreen.main.bounds.width-50, alignment: .center )
         }

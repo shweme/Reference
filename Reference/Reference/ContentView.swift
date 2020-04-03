@@ -24,7 +24,7 @@ struct ContentView: View {
                         }
                         ) {Image(systemName: "plus")}
                 )
-        }
+            }.navigationViewStyle(StackNavigationViewStyle())
     }
 }
 
